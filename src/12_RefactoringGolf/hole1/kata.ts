@@ -4,7 +4,6 @@ export class Game {
   private _lastSymbol = ' ';
   private _board: Board = new Board();
 
-  private readonly playerO = 'O';
   private readonly emptyPlay = ' ';
 
   private readonly firstRow = 0;
@@ -24,8 +23,9 @@ export class Game {
   }
 
   private validateFirstMove(player: string) {
+    let playerO = '0'
     if (this._lastSymbol == this.emptyPlay) {
-      if (player == this.playerO) {
+      if (player == playerO) {
         throw new Error('Invalid first player');
       }
     }
